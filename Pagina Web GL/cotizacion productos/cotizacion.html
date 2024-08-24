@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../imgs/GreenLife-removebg-preview.png"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="csss/w3.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <title>Green Life</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="container">
+        <header id="top">
+        <aside>
+        <div id="h1">
+            <p id="p1"><span style="color: rgb(10,180,60)">G</span>reen <span style="color: rgb(10,180,60)">L</span>ife</p>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label> 
+            <ul>
+                <li><a href="../Index.html" class="w3-button">Inicio</a></li>
+                <li><a href="../Producto.html" class="active w3-button">Productos</a></li>
+                <li><a href="../Beneficios.html" class="w3-button">Beneficios</a></li>
+                <li>
+                    <a  href="#" class="w3-button submenu-toggle submenu">Cultivos</a>
+                    <ul class="submenu">
+                    <li><a class="subcategoria" href="../cultivos/Hortalizas.html">Hortalizas</a></li>
+                    <li><a class="subcategoria" href="../cultivos/Frutas.html">Frutas</a></li>
+                    <li><a class="subcategoria" href="../cultivos/Cereales.html">Cereales</a></li>
+                    <li><a class="subcategoria" href="../cultivos/Flores.html">Flores</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Soporte.html" class="w3-button">Soporte</a></li>
+            </ul>
+        </div>
+        </aside>
+        </header>
+    </div> 
+<main class="contenido">
+    <div class="productos">
+        <label for="Producto"> Seleccione el producto a cotizar:
+            <select name="Producto" id="Producto">
+                <option value="P1">Monitor</option>
+                <option value="P2">Monitor y Riego</option>
+                <option value="P3">Monitor y Calibración</option>
+                <option value="P4">Kit completo</option>
+            </select>
+        </label>
+    </div>
+    <div class="medidas">
+        <label for="lts"> Unidad de medida por litros:
+            <select name="lts" id="Litros">
+                <option value="opt0">-</option>
+                <option value="L1">Cubeta pequeña (10 litro)</option>
+                <option value="L2">Cubeta mediana (20 litros)</option>
+                <option value="L3">Cubeta grande (50 litros)</option>
+                <option value="L4">Composta pequeña (100 litros)</option>
+                <option value="L5">Composta mediana (200 litros)</option>
+                <option value="L6">Composta grande (400 litros)</option>
+                <option value="L7">Caja para huerto pequeña (600 litros)</option>
+                <option value="L8">Caja para huerto mediana (1000 litros)</option>
+                <option value="L9">Caja para huerto grande (1500 litros)</option>
+            </select>
+        </label>
+                
+        <div class="boton">
+            <input id="mostrar-pdf" type="checkbox">
+            <label for="mostrar-pdf" class="libro-container">
+                <i class="fa fa-book libro"></i>
+            </label>
+        </div>
+        
+        <label for="mts" class="mtsdiv"> Unidad de medida por metros (Parcela):
+            <select name="mts" id="Metros">
+                <option value="opt0">-</option>
+                <option value="M1">Pequeña (hasta 50 metros)</option>
+                <option value="M2">Mediana (51 - 100 metros)</option>
+                <option value="M3">Grande (101 - 200 metros)</option>
+                <option value="M4">Muy grande (201 - 300 metros)</option>
+                <option value="M5">Extra grande (301 - 500 metros)</option>
+                <option value="M6">Gran escala (501 - 1000 metros)</option>
+                <option value="M7">Escala industrial (más de 1000 metros lineales)</option>
+            </select>
+        </label>
+    </div>
+    <div class="pdf-container">
+        <iframe id="pdf-iframe" src="pdfs/P1-M1.pdf" frameborder="0" width="100%" height="500px" class="pdf"></iframe>
+    </div>
+</main>
+</body>
+<footer>
+<div class="content">
+    <p>Copyright &copy; Greenlife | 2021</p>
+    <p><a href="mailto:monitorgreenlife@gmail.com" id="correo">Correo - Green Life</a></p>
+</div>
+<p id="desarrollado">Desarrollado por: <a href="https://github.com/HadesEA" target="_blank">Escobedo Aguilera Adrian</p> 
+</footer>
+</html>
+
+<script>
+    // Se reciben los elementos por id de Litros y Metros para asignarlo a sus respectivas variables
+    const litrosSelect = document.getElementById('Litros');
+    const metrosSelect = document.getElementById('Metros');
+    const productoSelect = document.getElementById('Producto');
+    const mostrarPdfButton = document.getElementById('mostrar-pdf');
+
+    // Los siguientes eventos son para que la barra de litros y metros regreso a su estado 0 cuando se seleccione un
+    // elemento de la otra barra de selección
+    litrosSelect.addEventListener('change', function() {
+        if (litrosSelect.value !== 'opt0') {
+        metrosSelect.value = 'opt0';
+        }
+    });
+
+    metrosSelect.addEventListener('change', function() {
+        if (metrosSelect.value !== 'opt0') {
+        litrosSelect.value = 'opt0';
+        }
+    });
+
+    // La siguiente función nos permite mostrar el pdf 
+    document.getElementById('mostrar-pdf').addEventListener('click', function() {
+    var pdfContainer = document.querySelector('.pdf-container');
+    var pdf = pdfContainer.querySelector('.pdf');
+    pdf.style.display = this.checked ? 'block' : 'none';
+    });
+</script>
