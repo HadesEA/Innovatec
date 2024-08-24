@@ -5,53 +5,21 @@ body {
 	margin: 0;
 }
 
-.checkbtn{
-	display: none;
-}
-
-.divh2{
-	padding-top: 20px;
-	display: flex;
-	justify-content: center;
-}
-
-h2{
-	padding: 5px 15px;
-	font-family: sans-serif;
-	font-weight: bold;
-	margin: 0;
-	border: 2px solid #0007;
-	box-shadow: 0px 8px 25px 0px #0005;
-	width: fit-content;
-	text-align: center;
-}
-
-.PDF{
-	display: none;
-	justify-content: center;
-	width: 100%;
-}
-
-.pdf-iframe{
-	margin-top: 50px;
-	position: absolute;
-	width: 80%;
-	height: 500px;
-}
-
 .content{
     color: white;
-    font-size: 1.5em;
+    font-size: larger;
     display: flex;
     justify-content: space-between;
-	gap: 75px;
-    margin: 0 10px 0;
+    margin: 0 50px 0;
     padding: 0;
     text-decoration: none;
 }
 
 #correo{
 	text-decoration: none;
+}
+br + a {
+	color: #22f;
 }
 
 #correo:hover{
@@ -66,18 +34,19 @@ a[href="https://github.com/HadesEA"]:hover{
     color:#382;
 }
 
-#check, #cotizar{
+.checkbtn{
 	display: none;
 }
 
-.contenido #cotizar:checked ~ iframe{
-	display: block;
+#check{
+	display: none;
 }
 
-#h1 {
+h1 {
 	width: 100%;
 	height: 100px;
 	font-size: 15px;
+	margin: 0;
 	font-style:normal;
 	background-color: black;
 }
@@ -103,66 +72,24 @@ li{
 	margin-left: 5px;
 }
 
+aside a{
+	color: white;
+}
+
 div#container {
-    width: 100%;
+	width: 100%px;
 	background-color: rgb(10,180,60);
 	height: 130px;
 }
 
-.contenido{
-	height: 750px;
-	background-color: mintcream;
-	width: 100%;
-	/* overflow: hidden; */
+/* Sí tienes complicaciones con los enlaces futuros de alguna otra página utiliza la este selector */
+li > a:hover,  a.active{
+	color: rgb(10,180,60);
 }
 
-.productos{
-	margin-bottom: 10px;
-    display: flex;
-	justify-content: center;
-    align-content: center;
-    padding: 0px 0;
-    scale: 1;
-}
-
-.medidas{
-	padding-top: 20px;
-    display: flex;
-	justify-content: space-evenly;
-	align-items:center;
-    scale: 1;
-}
-
-.medidas > label{
-	height: 50px;
-}
-
-label{
-    display: flex;
-    flex-direction: column;
-}
-
-.Eslogan{
-	padding: 0;
-	padding-bottom: 30px;
-	font-size: 50px;
-	text-align: center;
-	text-shadow: 0px 5px 20px #0b35 ;
-}
-
-img{
-	width: 30vw;
-}
-
-li > a:hover, li > a.active{
-	color: rgb(10, 180, 60);
-}
-
-
-nav#navegate ul, li{
+nav#navegate ul,nav li{
 	display: inline;
 }
-
 
 a + .submenu  {
 	position: absolute;
@@ -176,12 +103,11 @@ a + .submenu  {
 	transition: all .2s;
 	padding: 0px;
 	opacity: 0;
-	z-index: 2;
 }
 
 .submenu-toggle:hover +.submenu, .submenu:hover{
 	opacity: 1;
-	top: 14%;	
+	top: 14%;
 	transition: all .6s;
 }
 
@@ -197,37 +123,167 @@ a + .submenu  {
 	margin: 0;
 }
 
+#contenido{
+	width: 100%;
+	height: auto;
+	background-color: mintcream;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-evenly;
+	text-align: center;
+	align-items: center;
+}
+
+section{
+	margin: 20px 15vw 20px;
+	padding: 25px;
+	border: 2px solid #0003;
+	border-radius: 5px;
+}
+
+h2{
+	border-bottom: 1px solid #0004;
+}
+
+.descrip{
+	display: flex;
+	justify-content: center;
+	gap: 0;
+}
+
+#num-prod{
+	padding-left: 12%;
+	text-align: start;
+
+}
+
+#desgen{
+	margin: 0;
+	width: 60%;
+	font-size: 1em;
+	text-align: start;
+}
+
+#gen{
+	margin: 0;
+	width: 140px;
+}
+
+img{
+	margin-top: 20px;
+	width:35vw;
+}
+
+.input-container{
+	text-align: end;
+}
+
+input{
+	background-color: #3b4;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+input:hover{
+	background: radial-gradient(#3b4, #3b4b);
+	box-shadow: 0 0 12px 2px #0004;
+	padding: 6px;
+}
+
+#des{
+	text-align: start;
+	margin-left: 90px;
+}
+
+#desdes{
+	text-align: start;
+	margin: 0 90px 0;
+	font-size: 1em;
+}
+
+#ul-des{
+	padding: 20px 10vw 0;
+}
+
+#li-des{
+	text-align: start;
+}
+
+h3{
+	padding-top: 25px;
+	padding-bottom: 5px;
+}
+
+h3 + p{
+	font-size: 18px;
+}
+
+h4{
+	margin-top: 30px;
+	text-align: center;
+	font-size: 2em;
+}
+
+table{
+	display: flex;
+	justify-content: center;
+	border-spacing: 10px;
+	margin-bottom: 30px;
+}
+
+tr > td + td{
+	text-align: start;
+}
+
+td, tr{
+	border-bottom: 1px solid #0004;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+label{
+	text-decoration: underline;
+	color: #3b4;
+	cursor: pointer;
+}
 
 
 /* Ajuste para Celular */
 @media screen and (max-width: 900px) {
-    .medidas{
-        flex-direction: column;
-        gap: 30px;
-        margin: 30px;
-    }
+	img{
+		margin-top: 40px;
+		margin-bottom: 30px;
+		width: 60vw;
+	}
+	input{
+		margin: 0 60px 0;
+	}
 
 	.checkbtn{
 		display: block;
 		font-size: 30px;
-    	color: #fff;
-    	float:right;
-    	line-height: 80px;
-		margin-top: 10px;
-    	margin-right: 40px;
-    	cursor: pointer;
+		color: #fff;
+		float: right;
+		line-height: 80px;
+		margin-right: 40px;
+		cursor: pointer;
+	}
+	section .p4{
+		display: flex;
+		top: 41%;
+	}
+	section .p3{
+		top: 40%;
 	}
 	aside p{
 		left: 1%;
 	}
-	
-
 	aside ul{
 		position: absolute;
         width: 200px;
         height: 190px;
         background: #000e;
-		z-index: 2;
     	top: -200px;
 		right: 0px;
         text-align: center;
@@ -239,35 +295,15 @@ a + .submenu  {
 		margin: 5px 0px;
 		line-height: 15px;
 	}
-
 	#check:checked ~ ul{
 		top: 80px;
-	}
-
-	.Eslogan{
-		margin-top: 90px;
-		font-size: 35px;
-	}
-
-	.contenido{
-		height: 700px;
-		display: block;
-		justify-content: start;
-		align-items: center;
-		text-align: center;
-		padding-top: 10px;
-	}
-
-	img{
-		margin-top: 40px;
-		width: 55vw;
 	}
 
 	.ul-cultivos{
 		height: 190px;
 		display: flex;
 		flex-direction: column;
-		gap: 10px; 
+		gap: 10px;
 		justify-content: center;
 		text-align: center;
 	}
@@ -283,14 +319,16 @@ a + .submenu  {
 
 	.submenu-toggle:hover +.submenu, .submenu:hover{
 		opacity: 1;
-		top: 58%;	
+		top: 57%;
 		right: 100%;
 		transition: all .6s;
 		background-color: #000b;
 	}
 
-	.pdf-iframe{
-		margin-top: 10px;
-		height: 350px;
+	#des{
+		margin-left: 20px;
+	}
+	#desdes{
+		margin: 0;
 	}
 }

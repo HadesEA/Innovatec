@@ -5,40 +5,6 @@ body {
 	margin: 0;
 }
 
-.checkbtn{
-	display: none;
-}
-
-.divh2{
-	padding-top: 20px;
-	display: flex;
-	justify-content: center;
-}
-
-h2{
-	padding: 5px 15px;
-	font-family: sans-serif;
-	font-weight: bold;
-	margin: 0;
-	border: 2px solid #0007;
-	box-shadow: 0px 8px 25px 0px #0005;
-	width: fit-content;
-	text-align: center;
-}
-
-.PDF{
-	display: none;
-	justify-content: center;
-	width: 100%;
-}
-
-.pdf-iframe{
-	margin-top: 50px;
-	position: absolute;
-	width: 80%;
-	height: 500px;
-}
-
 .content{
     color: white;
     font-size: 1.5em;
@@ -66,18 +32,19 @@ a[href="https://github.com/HadesEA"]:hover{
     color:#382;
 }
 
-#check, #cotizar{
+.checkbtn{
 	display: none;
 }
 
-.contenido #cotizar:checked ~ iframe{
-	display: block;
+#check{
+	display: none;
 }
 
-#h1 {
+h1 {
 	width: 100%;
 	height: 100px;
 	font-size: 15px;
+	margin: 0;
 	font-style:normal;
 	background-color: black;
 }
@@ -103,66 +70,24 @@ li{
 	margin-left: 5px;
 }
 
+aside a{
+	color: white;
+}
+
 div#container {
-    width: 100%;
+	width: 100%px;
 	background-color: rgb(10,180,60);
 	height: 130px;
 }
 
-.contenido{
-	height: 750px;
-	background-color: mintcream;
-	width: 100%;
-	/* overflow: hidden; */
+/* Sí tienes complicaciones con los enlaces futuros de alguna otra página utiliza la este selector */
+li > a:hover,  a.active{
+	color: rgb(10,180,60);
 }
 
-.productos{
-	margin-bottom: 10px;
-    display: flex;
-	justify-content: center;
-    align-content: center;
-    padding: 0px 0;
-    scale: 1;
-}
-
-.medidas{
-	padding-top: 20px;
-    display: flex;
-	justify-content: space-evenly;
-	align-items:center;
-    scale: 1;
-}
-
-.medidas > label{
-	height: 50px;
-}
-
-label{
-    display: flex;
-    flex-direction: column;
-}
-
-.Eslogan{
-	padding: 0;
-	padding-bottom: 30px;
-	font-size: 50px;
-	text-align: center;
-	text-shadow: 0px 5px 20px #0b35 ;
-}
-
-img{
-	width: 30vw;
-}
-
-li > a:hover, li > a.active{
-	color: rgb(10, 180, 60);
-}
-
-
-nav#navegate ul, li{
+nav#navegate ul,nav li{
 	display: inline;
 }
-
 
 a + .submenu  {
 	position: absolute;
@@ -176,7 +101,6 @@ a + .submenu  {
 	transition: all .2s;
 	padding: 0px;
 	opacity: 0;
-	z-index: 2;
 }
 
 .submenu-toggle:hover +.submenu, .submenu:hover{
@@ -197,37 +121,97 @@ a + .submenu  {
 	margin: 0;
 }
 
+#contenido{
+	width: 100%;
+	height: auto;
+	background-color: mintcream;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-evenly;
+	text-align: center;
+	align-items: center;
+}
 
+main > div{
+	margin: 60px 80px 40px;
+}
+
+main > section{
+	padding: 0;
+}
+
+.expe{
+	width: 450px;
+	border: 1px solid #0002;
+	border-radius: 0 30px;
+	transition: 0.8s;
+}
+
+.monitor {
+    transition: 0.8s;
+}
+
+.enlace{
+	transition: all .2s;
+}
+
+.expe:hover,
+.expe:hover +.monitor {
+	box-shadow: 0 0 10px 10px #0003;
+    color: rgb(77, 163, 103);
+	text-shadow: 5px 7px 4px #0006;
+}
+
+
+.expe:hover .enlace{
+	padding: 0 20px 3px;
+	border: 1px solid #0002;
+	border-radius: 5px;
+	background-color: #1a51;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+img{
+	width: 200px;
+	padding: 10px;
+}
 
 /* Ajuste para Celular */
 @media screen and (max-width: 900px) {
-    .medidas{
-        flex-direction: column;
-        gap: 30px;
-        margin: 30px;
-    }
-
 	.checkbtn{
 		display: block;
 		font-size: 30px;
-    	color: #fff;
-    	float:right;
-    	line-height: 80px;
-		margin-top: 10px;
-    	margin-right: 40px;
-    	cursor: pointer;
+		color: #fff;
+		float: right;
+		line-height: 80px;
+		margin-right: 40px;
+		cursor: pointer;
+	}
+
+	.expe{
+		width: 300px;
+	}
+
+	section .p4{
+		display: flex;
+		top: 41%;
+	}
+	section .p3{
+		top: 40%;
 	}
 	aside p{
 		left: 1%;
 	}
-	
-
 	aside ul{
 		position: absolute;
         width: 200px;
         height: 190px;
         background: #000e;
-		z-index: 2;
     	top: -200px;
 		right: 0px;
         text-align: center;
@@ -239,35 +223,15 @@ a + .submenu  {
 		margin: 5px 0px;
 		line-height: 15px;
 	}
-
 	#check:checked ~ ul{
 		top: 80px;
-	}
-
-	.Eslogan{
-		margin-top: 90px;
-		font-size: 35px;
-	}
-
-	.contenido{
-		height: 700px;
-		display: block;
-		justify-content: start;
-		align-items: center;
-		text-align: center;
-		padding-top: 10px;
-	}
-
-	img{
-		margin-top: 40px;
-		width: 55vw;
 	}
 
 	.ul-cultivos{
 		height: 190px;
 		display: flex;
 		flex-direction: column;
-		gap: 10px; 
+		gap: 10px;
 		justify-content: center;
 		text-align: center;
 	}
@@ -283,14 +247,9 @@ a + .submenu  {
 
 	.submenu-toggle:hover +.submenu, .submenu:hover{
 		opacity: 1;
-		top: 58%;	
+		top: 57%;
 		right: 100%;
 		transition: all .6s;
 		background-color: #000b;
-	}
-
-	.pdf-iframe{
-		margin-top: 10px;
-		height: 350px;
 	}
 }

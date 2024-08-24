@@ -1,0 +1,265 @@
+body {
+background-color: rgb(23, 18, 32);
+color:#2c2c2c;
+font: normal 100% Georgia, serif;
+margin: 0;
+}
+
+.checkbtn{
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+.content{
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+	gap: 75px;
+    margin: 0 10px 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+#correo{
+	text-decoration: none;
+}
+
+#correo:hover{
+    color: #382;
+}
+
+#desarrollado{
+    color: #fff5;
+}
+
+a[href="https://github.com/HadesEA"]:hover{
+    color:#382;
+}
+
+#h1 {
+    width: 100%;
+    height: 100px;
+    font-size: 15px;
+    margin: 0;
+    font-style:normal;
+    background-color: black;
+}
+
+aside p {
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    position: absolute;
+	margin: 25px 10px 5px 10px;
+    left: 5%;
+}
+
+aside ul{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    padding-top: 2%;
+    text-align: end;
+}
+
+li{
+    margin-left: 5px;
+}
+
+aside a{
+    color: white;
+}
+
+div#container {
+    width: 100%px;
+    background-color: rgb(10,180,60);
+    height: 130px;
+    margin: 0;
+}
+
+h1 ul a:hover, h1 ul a.active{
+    color: rgb(10,180,60);
+}
+
+nav#navegate ul, li{
+    display: inline;
+}
+    
+section#contenido{
+    width:  100%;
+    height: auto;
+    background-color: mintcream;
+    justify-content: center;
+    overflow: hidden;
+}
+
+a + .submenu  {
+	position: absolute;
+	width: 200px;
+	height: 175px;
+	background: #000b;
+	top: -230px;
+	right: 70px;
+	text-align: center;
+	line-height: 40px;
+	transition: all .2s;
+	padding: 0px;
+	opacity: 0;
+}
+
+.submenu-toggle:hover +.submenu, .submenu:hover{
+	opacity: 1;
+	top: 14%;	
+	transition: all .6s;
+}
+
+.subcategoria{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	text-decoration: none;
+}
+
+.submenu > li {
+	margin: 0;
+}
+
+.encabezado{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 150px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.preg-frec{
+    border: 1px solid #0003;
+    border-radius: 5px;
+    margin: 30px 15vw 30px;
+    box-shadow: 0 0 15px 7px #0002;
+    margin-bottom: 150px;
+}
+
+details {
+    margin-bottom: 15px;
+    color: #000;
+}
+
+details > summary{
+    font-size: large;
+    cursor: pointer;
+    color: #382;
+}
+details > p{
+    margin-left: 2vw;
+    margin-right: 10vw;
+}
+
+#formulario{
+    width: 60%;
+    height: 100vh;
+    margin: 0 20vw 120px;
+}
+
+
+/* Ajuste para Celular */
+@media screen and (max-width: 900px) {
+	.checkbtn{
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        float: right;
+        line-height: 80px;
+        margin-top: 10px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+
+    aside p{
+	    left: 1%;
+	}
+
+    .Fondo{
+        display: none;
+    }
+
+    h3{
+        line-height: 25px;
+        margin-top: 40px;
+    }
+
+    details > summary{
+        line-height: 19px;
+        margin-left: -24px;
+    }
+
+    details:first-child > summary{
+        margin-top: 30px;
+    }
+
+    details > p{
+        margin-right: 0px;
+    }
+
+	aside ul{
+		position: absolute;
+        width: 200px;
+        height: 190px;
+        background: #000e;
+    	top: -200px;
+		right: 0px;
+        text-align: center;
+        transition: all .9s;
+		padding: 0px;
+	}
+
+    li{
+        display: block;
+        margin: 5px 0px;
+        line-height: 15px;
+    }
+    #check:checked ~ ul{
+        top: 80px;
+    }
+
+    .ul-cultivos{
+		height: 190px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px; 
+		justify-content: center;
+		text-align: center;
+	}
+
+	.subcategoria{
+		height: 40px;
+	}
+
+	a + .submenu{
+		top: -230px;
+		right: 100%;
+	}
+
+    #formulario{
+        height: 65vh;
+    }
+
+	.submenu-toggle:hover +.submenu, .submenu:hover{
+		opacity: 1;
+		top: 57%;
+		right: 100%;
+		transition: all .6s;
+		background-color: #000b;
+	}
+}

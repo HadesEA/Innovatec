@@ -1,47 +1,20 @@
 body {
 	background-color: rgb(23, 18, 32);
 	color:#2c2c2c;
-	font: normal 100% Georgia, serif;
-	margin: 0;
+	font: normal 100% Georgia, serif;	
 }
 
 .checkbtn{
 	display: none;
 }
 
-.divh2{
-	padding-top: 20px;
-	display: flex;
-	justify-content: center;
-}
-
-h2{
-	padding: 5px 15px;
-	font-family: sans-serif;
-	font-weight: bold;
-	margin: 0;
-	border: 2px solid #0007;
-	box-shadow: 0px 8px 25px 0px #0005;
-	width: fit-content;
-	text-align: center;
-}
-
-.PDF{
+#check{
 	display: none;
-	justify-content: center;
-	width: 100%;
-}
-
-.pdf-iframe{
-	margin-top: 50px;
-	position: absolute;
-	width: 80%;
-	height: 500px;
 }
 
 .content{
     color: white;
-    font-size: 1.5em;
+    font-size: larger;
     display: flex;
     justify-content: space-between;
 	gap: 75px;
@@ -66,18 +39,11 @@ a[href="https://github.com/HadesEA"]:hover{
     color:#382;
 }
 
-#check, #cotizar{
-	display: none;
-}
-
-.contenido #cotizar:checked ~ iframe{
-	display: block;
-}
-
-#h1 {
+h1 {
 	width: 100%;
 	height: 100px;
 	font-size: 15px;
+	margin: 0;
 	font-style:normal;
 	background-color: black;
 }
@@ -90,7 +56,6 @@ aside p {
 	margin: 25px 10px 5px 10px;
 	left: 5%;
 }
-
 aside ul{
 	font-size: 20px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -103,72 +68,38 @@ li{
 	margin-left: 5px;
 }
 
+aside a{
+	color: white;
+}
+
 div#container {
-    width: 100%;
+	width: 100%px;
 	background-color: rgb(10,180,60);
 	height: 130px;
 }
-
-.contenido{
-	height: 750px;
-	background-color: mintcream;
-	width: 100%;
-	/* overflow: hidden; */
+	
+h1 ul a:hover, h1 ul a.active{
+	color: rgb(10,180,60);
 }
-
-.productos{
-	margin-bottom: 10px;
-    display: flex;
-	justify-content: center;
-    align-content: center;
-    padding: 0px 0;
-    scale: 1;
-}
-
-.medidas{
-	padding-top: 20px;
-    display: flex;
-	justify-content: space-evenly;
-	align-items:center;
-    scale: 1;
-}
-
-.medidas > label{
-	height: 50px;
-}
-
-label{
-    display: flex;
-    flex-direction: column;
-}
-
-.Eslogan{
-	padding: 0;
-	padding-bottom: 30px;
-	font-size: 50px;
-	text-align: center;
-	text-shadow: 0px 5px 20px #0b35 ;
-}
-
-img{
-	width: 30vw;
-}
-
-li > a:hover, li > a.active{
-	color: rgb(10, 180, 60);
-}
-
 
 nav#navegate ul, li{
 	display: inline;
 }
 
+#contenido{
+    text-align: justify;
+	width: 100%;
+	height: auto;
+	background-color: mintcream;
+	justify-content: center;
+	overflow: hidden;
+}
 
 a + .submenu  {
 	position: absolute;
 	width: 200px;
 	height: 175px;
-	background: #000b;
+	background: #000e;
 	top: -230px;
 	right: 70px;
 	text-align: center;
@@ -176,7 +107,6 @@ a + .submenu  {
 	transition: all .2s;
 	padding: 0px;
 	opacity: 0;
-	z-index: 2;
 }
 
 .submenu-toggle:hover +.submenu, .submenu:hover{
@@ -197,25 +127,80 @@ a + .submenu  {
 	margin: 0;
 }
 
+.Titulo{
+	font-weight: 500;
+	margin-top: 0px;
+}
 
+.Descripcion{
+	margin: 0px 15px;
+}
 
-/* Ajuste para Celular */
+.cultivos-info{
+	display: block;
+	text-align: center;
+	box-shadow: 0 0 15px 5px #0005;
+	margin: 75px 15vw 75px 15vw;
+	display: none;
+}
+
+#primer-diapositiva{
+	margin-top: 40px;
+}
+
+img[src$="jpeg"]{
+	border: 0;
+}
+
+img[src$="jpg"]{
+	border: 0;
+}
+
+.Tabla-hortalizas{
+	width: 350px;
+	border: 2px solid #000;
+	margin-top: 25px;
+	margin-bottom: 30px;
+}
+
+.ul-cultivos{
+	height: 70px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center; 
+	justify-content: space-evenly;
+	text-align: center; 
+	padding: 0;
+	margin: 0 5px 20px;
+	margin-top: 35px;
+	border: 2px solid #000;
+	border-radius: 5px;
+	background-color: #3f3;
+}
+
+.li-cultivos{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+.li-cultivos:hover{
+	color: rgb(10,180,60);
+	font-size: larger;
+}
+
 @media screen and (max-width: 900px) {
-    .medidas{
-        flex-direction: column;
-        gap: 30px;
-        margin: 30px;
-    }
-
 	.checkbtn{
 		display: block;
 		font-size: 30px;
-    	color: #fff;
-    	float:right;
-    	line-height: 80px;
+		color: #fff;
+		float:right;
+		line-height: 80px;
 		margin-top: 10px;
-    	margin-right: 40px;
-    	cursor: pointer;
+		margin-right: 40px;
+		cursor: pointer;
 	}
 	aside p{
 		left: 1%;
@@ -224,14 +209,13 @@ a + .submenu  {
 
 	aside ul{
 		position: absolute;
-        width: 200px;
-        height: 190px;
-        background: #000e;
-		z-index: 2;
-    	top: -200px;
+		width: 200px;
+		height: 190px;
+		background: #000e;
+		top: -200px;
 		right: 0px;
-        text-align: center;
-        transition: all .9s;
+		text-align: center;
+		transition: all .9s;
 		padding: 0px;
 	}
 	li{
@@ -240,31 +224,29 @@ a + .submenu  {
 		line-height: 15px;
 	}
 
+	.Tabla-hortalizas{
+		width: 68vw;
+	}
+
 	#check:checked ~ ul{
-		top: 80px;
+		top: 0px;
 	}
 
 	.Eslogan{
-		margin-top: 90px;
 		font-size: 35px;
 	}
 
 	.contenido{
-		height: 700px;
 		display: block;
 		justify-content: start;
 		align-items: center;
 		text-align: center;
+		height: 80vh;
 		padding-top: 10px;
-	}
-
-	img{
-		margin-top: 40px;
-		width: 55vw;
-	}
+	}	
 
 	.ul-cultivos{
-		height: 190px;
+		height: 215px;
 		display: flex;
 		flex-direction: column;
 		gap: 10px; 
@@ -277,20 +259,15 @@ a + .submenu  {
 	}
 
 	a + .submenu{
-		top: -230px;
+		top: -230;
 		right: 100%;
 	}
 
 	.submenu-toggle:hover +.submenu, .submenu:hover{
 		opacity: 1;
-		top: 58%;	
-		right: 100%;
+		top: 57%;
+		right: 100%;	
 		transition: all .6s;
 		background-color: #000b;
-	}
-
-	.pdf-iframe{
-		margin-top: 10px;
-		height: 350px;
 	}
 }

@@ -41,15 +41,8 @@
         </header>
     </div> 
 <main class="contenido">
-    <div class="productos">
-        <label for="Producto"> Seleccione el producto a cotizar:
-            <select name="Producto" id="Producto">
-                <option value="P1">Monitor</option>
-                <option value="P2">Monitor y Riego</option>
-                <option value="P3">Monitor y Calibración</option>
-                <option value="P4">Kit completo</option>
-            </select>
-        </label>
+    <div class="divh2">
+        <h2>Monitor Base</h2>
     </div>
     <div class="medidas">
         <label for="lts"> Unidad de medida por litros:
@@ -66,13 +59,6 @@
                 <option value="L9">Caja para huerto grande (1500 litros)</option>
             </select>
         </label>
-                
-        <div class="boton">
-            <input id="mostrar-pdf" type="checkbox">
-            <label for="mostrar-pdf" class="libro-container">
-                <i class="fa fa-book libro"></i>
-            </label>
-        </div>
         
         <label for="mts" class="mtsdiv"> Unidad de medida por metros (Parcela):
             <select name="mts" id="Metros">
@@ -87,9 +73,22 @@
             </select>
         </label>
     </div>
-    <div class="pdf-container">
-        <iframe id="pdf-iframe" src="pdfs/P1-M1.pdf" frameborder="0" width="100%" height="500px" class="pdf"></iframe>
-    </div>
+    <div class="PDF" id="L1-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Cubetas/Opcion 1.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L2-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 2.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L3-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 3.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L4-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 4 .pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="L5-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 5.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L6-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 6.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L7-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 7.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L8-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 8.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="L9-content"><iframe class="pdf-iframe" src="pdfs/Monitor Base/Cubetas/Opcion 9.pdf" frameborder="0" ></iframe></div>
+    <div class="PDF" id="M1-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M1.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M2-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M2.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M3-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M3.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M4-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M4.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M5-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M5.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M6-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M6.pdf" frameborder="0"></iframe></div>
+    <div class="PDF" id="M7-content"><iframe class="pdf-iframe" src="pdfs/Monitor base/Parcelas/P1-M7.pdf" frameborder="0"></iframe></div>
 </main>
 </body>
 <footer>
@@ -102,30 +101,34 @@
 </html>
 
 <script>
-    // Se reciben los elementos por id de Litros y Metros para asignarlo a sus respectivas variables
-    const litrosSelect = document.getElementById('Litros');
-    const metrosSelect = document.getElementById('Metros');
-    const productoSelect = document.getElementById('Producto');
-    const mostrarPdfButton = document.getElementById('mostrar-pdf');
+    const select1 = document.getElementById('Metros');
+    const select2 = document.getElementById('Litros');
+    
+    select2.addEventListener('change', function() {
+        const selectedValue = select2.value;
+        select1.value = 'none'; // Resetea el valor del primer select
 
-    // Los siguientes eventos son para que la barra de litros y metros regreso a su estado 0 cuando se seleccione un
-    // elemento de la otra barra de selección
-    litrosSelect.addEventListener('change', function() {
-        if (litrosSelect.value !== 'opt0') {
-        metrosSelect.value = 'opt0';
+        const contentElements = document.querySelectorAll('[id$="-content"]');
+            contentElements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            if (selectedValue !== 'none') {
+                document.getElementById(selectedValue + '-content').style.display = 'flex';
+            }
+    });
+    select1.addEventListener('change', function() {
+        const selectedValue = select1.value;
+        select2.value = 'none'; // Resetea el valor del segundo select
+
+        const contentElements = document.querySelectorAll('[id$="-content"]');
+        contentElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+
+        if (selectedValue !== 'none') {
+            document.getElementById(selectedValue + '-content').style.display = 'flex';
         }
     });
 
-    metrosSelect.addEventListener('change', function() {
-        if (metrosSelect.value !== 'opt0') {
-        litrosSelect.value = 'opt0';
-        }
-    });
-
-    // La siguiente función nos permite mostrar el pdf 
-    document.getElementById('mostrar-pdf').addEventListener('click', function() {
-    var pdfContainer = document.querySelector('.pdf-container');
-    var pdf = pdfContainer.querySelector('.pdf');
-    pdf.style.display = this.checked ? 'block' : 'none';
-    });
 </script>
