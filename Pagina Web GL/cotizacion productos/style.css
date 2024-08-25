@@ -66,12 +66,8 @@ a[href="https://github.com/HadesEA"]:hover{
     color:#382;
 }
 
-#check, #cotizar{
+#check{
 	display: none;
-}
-
-.contenido #cotizar:checked ~ iframe{
-	display: block;
 }
 
 #h1 {
@@ -166,11 +162,11 @@ nav#navegate ul, li{
 
 a + .submenu  {
 	position: absolute;
-	width: 200px;
+	width: 120px;
 	height: 175px;
 	background: #000b;
 	top: -230px;
-	right: 70px;
+	right: 113px;
 	text-align: center;
 	line-height: 40px;
 	transition: all .2s;
