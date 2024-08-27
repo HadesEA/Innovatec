@@ -178,17 +178,18 @@ img[src$="jpg"]{
 	margin-top: 35px;
 	border: 2px solid #000;
 	border-radius: 5px;
-	background-color: #3f3;
+	background-color: #2c3;
 }
 
 .li-cultivos{
 	text-decoration: none;
 	margin: 0;
 	padding: 0;
+	transition: color .4s, font-size .8s;
 }
 
 .li-cultivos:hover{
-	color: rgb(10,180,60);
+	color: #cccc;
 	font-size: larger;
 }
 
