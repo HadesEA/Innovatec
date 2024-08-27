@@ -327,4 +327,12 @@ label{
 		margin: 0;
 	}
 
+	.descrip{
+		flex-direction: column;
+		align-items: center;	
+	}
+
+	#gen{
+		margin-bottom: 20px;
+	}
 }
