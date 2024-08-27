@@ -195,7 +195,11 @@ img{
 	}
 
 	.expe{
-		width: 300px;
+		width: 270px;
+	}
+
+	.monitor, .monitor-riego, .monitor-calibracion, .kit-completo, .kit-compostaje, .composta{
+		margin: 55px 0;
 	}
 
 	section .p4{
