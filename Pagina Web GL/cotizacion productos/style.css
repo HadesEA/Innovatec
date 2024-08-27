@@ -33,12 +33,21 @@ body {
 	align-items: center;
 	position: fixed;
 	transition: all .9s;
-	top: 220px;
+	top: 270px;
 	color: #000;
 }
 
 .divh2:focus-within .divh2-fondo{
 	display: block;
+}
+
+h2:hover{
+	background-color: #5a5;
+	scale: 1.1;
+}
+
+h2:hover ~ body{
+	background-color: #5a5;
 }
 
 .menu-link{
@@ -47,6 +56,8 @@ body {
 
 h3:hover{
 	color: #5a5;
+	scale: 1.1;
+	padding: 0 5px;
 }
 
 h3{
@@ -55,6 +66,7 @@ h3{
 	border: 2px solid #0008;
 	border-radius: 8px;
 	text-align: center;
+	transition: scale .9s, color .9s, padding .9s;
 }
 
 h2{
@@ -67,6 +79,7 @@ h2{
 	box-shadow: 0px 8px 25px 0px #0005;
 	width: fit-content;
 	text-align: center;
+	transition: scale .9s, background-color .9s, all 1.3s;
 }
 
 .PDF{
